@@ -19,10 +19,18 @@ The project uses `output: 'export'`, so the production build generates a static 
 
 ## Contact Form
 
-Create a Formspree form and add this environment variable in Vercel:
+Create a Formspree form and set the recipient email in Formspree to:
+
+```bash
+shreejeetraveljalandhar@gmail.com
+```
+
+Then add this environment variable in Vercel:
 
 ```bash
 NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
 ```
+
+The contact form is static-friendly and submits directly to the configured Formspree endpoint. It shows a success message after a successful submission and a friendly error message if submission fails.
 
 No database, admin panel, authentication, payment gateway or online booking is included.
