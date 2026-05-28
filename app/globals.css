@@ -20,7 +20,7 @@
   }
 
   .nav-link {
-    @apply rounded-lg px-3 py-2 text-sm font-bold text-slate-700 transition hover:bg-brand-sky hover:text-brand-blue;
+    @apply rounded-lg px-2.5 py-2 text-[13px] font-bold leading-5 text-slate-700 transition hover:bg-brand-sky hover:text-brand-blue;
   }
 
   .nav-link-active {
