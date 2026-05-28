@@ -57,7 +57,18 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-5 text-center text-sm text-blue-100">
-        © {new Date().getFullYear()} {site.name}. All rights reserved.
+        <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+        <p className="mt-2 text-xs text-blue-200">
+          Made by{' '}
+          <a
+            href="https://www.notedaddigital.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white underline-offset-4 transition hover:text-brand-amber hover:underline"
+          >
+            Noted Ad Digital
+          </a>
+        </p>
       </div>
     </footer>
   );
