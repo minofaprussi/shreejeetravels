@@ -26,7 +26,7 @@ export default function ServicePage({ service }) {
       <section className="section">
         <SectionHeading eyebrow="Overview" title="Built around a clear file process" text={service.overview} />
         <div className="mt-10">
-          <CountryGrid items={service.countries} />
+          <CountryGrid items={service.countries} baseHref={service.countryPageType ? service.href : undefined} />
         </div>
       </section>
 

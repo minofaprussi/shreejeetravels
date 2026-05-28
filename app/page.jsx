@@ -3,7 +3,7 @@ import CountryGrid from '@/components/CountryGrid';
 import SectionHeading from '@/components/SectionHeading';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
-import { services, site, studentVisaCountries, testimonials, touristVisaCountries, tourPackageImages, tourPackages, workPermitCountries } from '@/lib/siteData';
+import { services, site, slugify, studentVisaCountries, testimonials, touristVisaCountries, tourPackageImages, tourPackages, workPermitCountries } from '@/lib/siteData';
 
 export default function HomePage() {
   return (
@@ -25,6 +25,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="-mt-12 px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl rounded-lg border border-white/70 bg-white p-6 shadow-soft">
+          <div className="grid gap-4 md:grid-cols-3">
+            {site.approvals.map((approval) => (
+              <div key={approval.label} className="rounded-lg bg-brand-sky p-5">
+                <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-orange">{approval.title}</p>
+                <p className="mt-3 text-sm font-bold leading-6 text-brand-navy">{approval.label}</p>
+                <p className="mt-1 break-words text-sm leading-6 text-slate-700">{approval.number}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <SectionHeading center eyebrow="Our Services" title="Everything your travel file needs" text="A polished static showcase website today, ready for future admin, database or enquiry workflows later." />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -37,7 +51,7 @@ export default function HomePage() {
           <div>
             <SectionHeading eyebrow="Work Permit" title="Career destinations we support" text="Country-specific consulting for overseas work routes, document planning and file preparation." />
             <div className="mt-8">
-              <CountryGrid items={workPermitCountries} />
+              <CountryGrid items={workPermitCountries} baseHref="/work-permit" />
             </div>
           </div>
           <div className="overflow-hidden rounded-lg shadow-soft">
@@ -51,13 +65,13 @@ export default function HomePage() {
           <div>
             <SectionHeading eyebrow="Student Visa" title="Study abroad destinations" text="Support for admissions, SOPs, financial documents and visa file preparation." />
             <div className="mt-8">
-              <CountryGrid items={studentVisaCountries} columns="sm:grid-cols-4 lg:grid-cols-2" />
+              <CountryGrid items={studentVisaCountries} columns="sm:grid-cols-4 lg:grid-cols-2" baseHref="/student-visa" />
             </div>
           </div>
           <div>
             <SectionHeading eyebrow="Tourist Visa" title="Travel visa destinations" text="Document guidance for holiday, family visit, event and short business travel files." />
             <div className="mt-8">
-              <CountryGrid items={touristVisaCountries} />
+              <CountryGrid items={touristVisaCountries} baseHref="/tourist-visa" />
             </div>
           </div>
         </div>
@@ -82,13 +96,13 @@ export default function HomePage() {
         <SectionHeading center eyebrow="Tour Packages" title="Popular holiday ideas" text="Preview destinations for ready-to-customize packages with stays, transfers, sightseeing and visa add-ons." />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {tourPackages.map((place) => (
-            <div key={place} className="group overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
+            <Link key={place} href={`/tour-packages/${slugify(place)}`} className="group overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
               <img className="h-40 w-full object-cover transition duration-500 group-hover:scale-105" src={tourPackageImages[place]} alt={`${place} tour package`} />
               <div className="p-5">
                 <p className="text-lg font-bold text-brand-navy">{place}</p>
                 <p className="mt-2 text-sm text-slate-600">Hotels, transfers and sightseeing options.</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

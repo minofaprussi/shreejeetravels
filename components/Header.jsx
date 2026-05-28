@@ -11,6 +11,17 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur">
+      <div className="bg-brand-navy text-white">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-xs font-semibold sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <a href={site.landlineHref} className="text-brand-amber transition hover:text-white">Landline: {site.landline}</a>
+            <a href={site.emailHref} className="transition hover:text-brand-amber">{site.email}</a>
+          </div>
+          <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="transition hover:text-brand-amber">
+            WhatsApp: +91 {site.whatsappNumber}
+          </a>
+        </div>
+      </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-blue text-lg font-black text-white shadow-soft">SJ</span>
@@ -28,8 +39,8 @@ export default function Header() {
           ))}
         </div>
 
-        <a href={site.phoneHref} className="hidden rounded-lg bg-brand-orange px-4 py-2 text-sm font-extrabold text-white transition hover:bg-orange-600 xl:inline-flex">
-          Call Now
+        <a href={site.landlineHref} className="hidden rounded-lg bg-brand-orange px-4 py-2 text-sm font-extrabold text-white transition hover:bg-orange-600 xl:inline-flex">
+          {site.landline}
         </a>
 
         <button

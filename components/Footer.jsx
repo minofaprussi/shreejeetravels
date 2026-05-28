@@ -4,7 +4,7 @@ import { services, site } from '@/lib/siteData';
 export default function Footer() {
   return (
     <footer className="bg-brand-navy text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-white text-lg font-black text-brand-blue">SJ</span>
@@ -28,9 +28,22 @@ export default function Footer() {
         <div>
           <p className="font-bold">Contact</p>
           <div className="mt-4 grid gap-2 text-sm text-blue-100">
-            <a href={site.phoneHref}>{site.phone}</a>
-            <a href={`mailto:${site.email}`}>{site.email}</a>
+            {site.phones.map((phone) => (
+              <a key={phone} href={`tel:${phone.replace(/[^0-9]/g, '')}`} className="transition hover:text-white">{phone}</a>
+            ))}
+            <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">WhatsApp: +91 {site.whatsappNumber}</a>
+            <a href={site.emailHref} className="break-words transition hover:text-white">{site.email}</a>
             <span>India</span>
+          </div>
+        </div>
+        <div className="lg:col-span-4">
+          <div className="grid gap-4 rounded-lg border border-white/10 bg-white/5 p-5 md:grid-cols-3">
+            {site.approvals.map((approval) => (
+              <div key={approval.label}>
+                <p className="text-sm font-bold text-white">{approval.title}</p>
+                <p className="mt-2 text-xs leading-5 text-blue-100">{approval.label}: {approval.number}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
