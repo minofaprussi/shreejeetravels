@@ -17,7 +17,7 @@ export default function AboutPage() {
             <p className="mt-6 text-lg leading-8 text-slate-600">ShreeJee Travels is built for clients who want clear steps, organized documentation and responsive support across visa consultancy, work permits, student visas, tourist visas, air ticketing, tour packages and CSC services.</p>
             <Link href="/contact-us" className="btn-primary mt-8">Talk to Us</Link>
           </div>
-          <img className="rounded-lg shadow-soft" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" alt="Travel consultants meeting clients" />
+          <img className="rounded-lg shadow-soft" src="/images/about-consultants.jpg" alt="Travel consultants meeting clients" />
         </div>
       </section>
       <section className="bg-slate-50 py-16 sm:py-24">

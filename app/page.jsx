@@ -3,14 +3,14 @@ import CountryGrid from '@/components/CountryGrid';
 import SectionHeading from '@/components/SectionHeading';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
-import { services, site, studentVisaCountries, testimonials, touristVisaCountries, tourPackages, workPermitCountries } from '@/lib/siteData';
+import { services, site, studentVisaCountries, testimonials, touristVisaCountries, tourPackageImages, tourPackages, workPermitCountries } from '@/lib/siteData';
 
 export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-brand-navy">
         <div className="absolute inset-0">
-          <img className="h-full w-full object-cover opacity-35" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1800&q=80" alt="" />
+          <img className="h-full w-full object-cover opacity-35" src="/images/hero-travel.jpg" alt="" />
         </div>
         <div className="relative mx-auto grid min-h-[620px] max-w-7xl content-center px-4 py-20 sm:px-6 lg:px-8">
           <div className="max-w-3xl text-white animate-rise">
@@ -41,7 +41,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="overflow-hidden rounded-lg shadow-soft">
-            <img className="h-full min-h-[420px] w-full object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Modern city skyline for overseas work permit planning" />
+            <img className="h-full min-h-[420px] w-full object-cover" src="/images/work-permit-highlight.jpg" alt="Modern city skyline for overseas work permit planning" />
           </div>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function HomePage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {tourPackages.map((place) => (
             <div key={place} className="group overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-soft">
-              <img className="h-40 w-full object-cover transition duration-500 group-hover:scale-105" src={`https://source.unsplash.com/600x420/?${encodeURIComponent(place)},travel`} alt={`${place} tour package`} />
+              <img className="h-40 w-full object-cover transition duration-500 group-hover:scale-105" src={tourPackageImages[place]} alt={`${place} tour package`} />
               <div className="p-5">
                 <p className="text-lg font-bold text-brand-navy">{place}</p>
                 <p className="mt-2 text-sm text-slate-600">Hotels, transfers and sightseeing options.</p>
