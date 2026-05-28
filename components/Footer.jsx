@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { services, site } from '@/lib/siteData';
 
 export default function Footer() {
@@ -6,8 +7,16 @@ export default function Footer() {
     <footer className="bg-brand-navy text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-white text-lg font-black text-brand-blue">SJ</span>
+          <div className="flex items-center gap-4">
+            <span className="relative flex h-16 w-20 shrink-0 items-center justify-center rounded-lg bg-white p-2 shadow-sm">
+              <Image
+                src="/logo.png"
+                alt="ShreeJee Travels logo"
+                width={538}
+                height={427}
+                className="h-full w-full object-contain"
+              />
+            </span>
             <div>
               <p className="text-xl font-extrabold">{site.name}</p>
               <p className="text-sm text-blue-100">Travel, visa and consultancy services</p>

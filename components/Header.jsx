@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { navLinks, site } from '@/lib/siteData';
@@ -23,8 +24,17 @@ export default function Header() {
         </div>
       </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-blue text-lg font-black text-white shadow-soft">SJ</span>
+        <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
+          <span className="relative flex h-12 w-14 shrink-0 items-center justify-center rounded-lg bg-white p-1 shadow-sm ring-1 ring-slate-200 sm:h-14 sm:w-16">
+            <Image
+              src="/logo.png"
+              alt="ShreeJee Travels logo"
+              width={538}
+              height={427}
+              priority
+              className="h-full w-full object-contain"
+            />
+          </span>
           <span>
             <span className="block text-lg font-extrabold leading-5 text-brand-navy">ShreeJee</span>
             <span className="block text-sm font-semibold text-brand-orange">Travels</span>

@@ -15,6 +15,11 @@ export const metadata = {
     description: 'Travel, visa, ticketing, tour package and CSC services consultancy.',
     type: 'website',
   },
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {
