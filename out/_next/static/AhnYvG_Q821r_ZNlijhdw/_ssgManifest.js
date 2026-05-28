@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fstudent-visa\u002F[country]","\u002Ftour-packages\u002F[country]","\u002Ftourist-visa\u002F[country]","\u002Fwork-permit\u002F[country]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
