@@ -6,6 +6,9 @@ import TestimonialCard from '@/components/TestimonialCard';
 import { services, site, slugify, studentVisaCountries, testimonials, touristVisaCountries, tourPackageImages, tourPackages, workPermitCountries } from '@/lib/siteData';
 
 export default function HomePage() {
+  const appointmentWhatsApp = 'https://wa.me/919501726555?text=Hello%20ShreeJee%20Travels%2C%20I%20want%20to%20enquire%20about%20Passport%2FVisa%20Appointment.';
+  const appointmentCards = ['Passport Appointments', 'Visa Appointments'];
+
   return (
     <>
       <section className="relative overflow-hidden bg-brand-navy">
@@ -87,6 +90,32 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-4">
             {['Domestic', 'International', 'Student Fares', 'Group Travel'].map((item) => (
               <div key={item} className="rounded-lg bg-white/10 p-5 text-center font-bold backdrop-blur">{item}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="-mt-8 px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-lg bg-white p-4 shadow-soft ring-1 ring-slate-200 sm:p-6">
+          <div className="grid gap-4 md:grid-cols-2">
+            {appointmentCards.map((title) => (
+              <a
+                key={title}
+                href={appointmentWhatsApp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-[2rem] bg-brand-navy px-6 py-6 text-white shadow-soft transition duration-300 hover:-translate-y-1 hover:bg-brand-blue sm:px-8"
+              >
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-amber">Appointment Service</p>
+                    <h2 className="mt-2 text-2xl font-extrabold tracking-tight">{title}</h2>
+                  </div>
+                  <span className="inline-flex w-fit items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-extrabold text-brand-navy transition group-hover:bg-brand-orange group-hover:text-white">
+                    Book Appointment
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </div>
