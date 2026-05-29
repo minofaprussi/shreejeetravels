@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { services, site } from '@/lib/siteData';
+import SocialLinks from '@/components/SocialLinks';
 
 export default function Footer() {
   return (
@@ -25,6 +26,7 @@ export default function Footer() {
           <p className="mt-5 max-w-xl text-sm leading-6 text-blue-100">
             Premium guidance for work permits, student visas, tourist visas, air ticketing, tour packages and CSC services.
           </p>
+          <SocialLinks className="mt-5" iconClassName="border-white/20 text-white" />
         </div>
         <div>
           <p className="font-bold">Services</p>
@@ -32,6 +34,7 @@ export default function Footer() {
             {services.slice(0, 5).map((service) => (
               <Link key={service.href} href={service.href} className="transition hover:text-white">{service.title}</Link>
             ))}
+            <a href={site.siteMap} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">Site Map</a>
           </div>
         </div>
         <div>

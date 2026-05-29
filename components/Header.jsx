@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { navLinks, site } from '@/lib/siteData';
+import SocialLinks from '@/components/SocialLinks';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -30,9 +31,12 @@ export default function Header() {
             ))}
             <a href={site.emailHref} className="transition hover:text-brand-amber">{site.email}</a>
           </div>
-          <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="transition hover:text-brand-amber">
-            WhatsApp: +91 {site.whatsappNumber}
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <SocialLinks iconClassName="border-white/20 text-white hover:shadow-none" />
+            <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="transition hover:text-brand-amber">
+              WhatsApp: +91 {site.whatsappNumber}
+            </a>
+          </div>
         </div>
       </div>
       <nav className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-3 sm:px-6 xl:gap-5 xl:px-8" aria-label="Main navigation">
