@@ -18,8 +18,16 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur">
       <div className="bg-brand-navy text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-xs font-semibold sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <a href={site.landlineHref} className="text-brand-amber transition hover:text-white">Landline: {site.landline}</a>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            {site.phones.map((phone) => (
+              <a
+                key={phone}
+                href={`tel:${phone.replace(/[^0-9]/g, '')}`}
+                className={`${phone === site.landline ? 'text-brand-amber' : 'text-white'} transition hover:text-brand-amber`}
+              >
+                {phone === site.landline ? `Landline: ${phone}` : phone}
+              </a>
+            ))}
             <a href={site.emailHref} className="transition hover:text-brand-amber">{site.email}</a>
           </div>
           <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="transition hover:text-brand-amber">
