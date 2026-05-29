@@ -15,7 +15,7 @@ export default function ContactPage() {
         <div>
           <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-orange">Contact Us</p>
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-brand-navy sm:text-5xl">Tell us your destination. We will help with the next step.</h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">This static contact form is ready for Formspree. Add your endpoint in Vercel as NEXT_PUBLIC_FORMSPREE_ENDPOINT.</p>
+          <p className="mt-6 text-lg leading-8 text-slate-600"></p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {site.phones.map((phone) => (
               <a
