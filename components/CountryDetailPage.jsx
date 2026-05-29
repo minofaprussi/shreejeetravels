@@ -41,9 +41,9 @@ export default function CountryDetailPage({ page }) {
           <div className="rounded-lg bg-brand-sky p-6">
             <h2 className="text-2xl font-extrabold text-brand-navy">Why choose ShreeJee Travels</h2>
             <ul className="mt-5 grid gap-3 text-sm font-semibold text-slate-700">
-              <li>Approved by Ministry of External Affairs</li>
-              <li>Approved by Punjab Government</li>
-              <li>GST registered travel and visa consultancy</li>
+              {site.approvals.map((approval) => (
+                <li key={approval.title}>{approval.title}</li>
+              ))}
               <li>Clear guidance from enquiry to next step</li>
             </ul>
           </div>
