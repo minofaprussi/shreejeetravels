@@ -11,8 +11,9 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const pathname = usePathname();
-  const moreLinks = navLinks.filter(([label]) => ['CSC', 'Testimonials', 'Gallery'].includes(label));
-  const primaryLinks = navLinks.filter(([label]) => !['CSC', 'Testimonials', 'Gallery'].includes(label));
+  const moreMenuLabels = ['CSC', 'Testimonials', 'Gallery', 'Privacy'];
+  const moreLinks = navLinks.filter(([label]) => moreMenuLabels.includes(label));
+  const primaryLinks = navLinks.filter(([label]) => !moreMenuLabels.includes(label));
   const isMoreActive = moreLinks.some(([, href]) => pathname === href);
 
   return (

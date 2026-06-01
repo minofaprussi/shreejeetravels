@@ -34,6 +34,7 @@ export default function Footer() {
             {services.slice(0, 5).map((service) => (
               <Link key={service.href} href={service.href} className="transition hover:text-white">{service.title}</Link>
             ))}
+            <Link href="/privacy-policy" className="transition hover:text-white">Privacy Policy</Link>
             <a href={site.siteMap} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">Site Map</a>
           </div>
         </div>
