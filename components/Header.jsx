@@ -1,11 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { navLinks, site } from '@/lib/siteData';
-import SocialLinks from '@/components/SocialLinks';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
